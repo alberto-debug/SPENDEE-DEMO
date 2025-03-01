@@ -27,6 +27,6 @@ public class TaskController {
     @GetMapping("/{id}")
     public ResponseEntity<Task> getTaskById(@PathVariable Long id){
         Optional<Task> task = taskService.getTakById(id);
-
+        return task.map(ResponseEntity::ok).orElseGet(()-> ResponseEntity.badRequest().build());
     }
 }
