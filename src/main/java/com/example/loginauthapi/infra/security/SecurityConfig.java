@@ -31,8 +31,7 @@ public class SecurityConfig {
         this.userDetailsService = userDetailsService;
         this.securityFilter = securityFilter;
     }
-
-
+    
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
