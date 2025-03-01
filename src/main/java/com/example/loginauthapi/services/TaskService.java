@@ -40,7 +40,6 @@ public class TaskService {
         }).orElseThrow(()-> new RuntimeException("Task Not Found"));
     }
 
-
     public void deleteTask(Long id){
         taskRepository.deleteById(id);
     }

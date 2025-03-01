@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87675954-5604-402e-b0a7-90ce99da4c39" name="Changes" comment="create task service">
+    <list default="true" id="87675954-5604-402e-b0a7-90ce99da4c39" name="Changes" comment="delete task service">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loginauthapi/services/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loginauthapi/services/TaskService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,22 +105,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720803460079</updated>
-    </task>
-    <task id="LOCAL-00059" summary="changes">
-      <option name="closed" value="true" />
-      <created>1739546258119</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1739546258119</updated>
-    </task>
-    <task id="LOCAL-00060" summary="changes">
-      <option name="closed" value="true" />
-      <created>1739546427531</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1739546427531</updated>
     </task>
     <task id="LOCAL-00061" summary="changes">
       <option name="closed" value="true" />
@@ -498,7 +482,23 @@
       <option name="project" value="LOCAL" />
       <updated>1740830988679</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="find task service">
+      <option name="closed" value="true" />
+      <created>1740831201044</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1740831201044</updated>
+    </task>
+    <task id="LOCAL-00109" summary="delete task service">
+      <option name="closed" value="true" />
+      <created>1740831262788</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1740831262788</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -523,6 +523,8 @@
     <MESSAGE value="changes1" />
     <MESSAGE value="changes" />
     <MESSAGE value="create task service" />
-    <option name="LAST_COMMIT_MESSAGE" value="create task service" />
+    <MESSAGE value="find task service" />
+    <MESSAGE value="delete task service" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete task service" />
   </component>
 </project>
