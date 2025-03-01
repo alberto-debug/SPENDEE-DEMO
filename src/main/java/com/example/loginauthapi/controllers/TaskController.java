@@ -27,22 +27,12 @@ public class TaskController {
         return ResponseEntity.ok(taskService.createTask(task));
     }
 
-    @GetMapping("/all")
-    public ResponseEntity<List<Task>> getAllTasks(){
-        return ResponseEntity.ok(taskService.getAllTasks());
-    }
-
     @GetMapping("/user")
     public ResponseEntity<List<Task>> getUserTasks(@AuthenticationPrincipal User user) {
         if (user == null) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
         }
         return ResponseEntity.ok(taskService.getUserTasks(user.getId()));
-    }
-
-    @GetMapping("/user/{userId}")
-    public ResponseEntity<List<Task>> getUserTaskById(@PathVariable Long userId){
-        return ResponseEntity.ok(taskService.getUserTasks(userId));
     }
 
     @PutMapping("/updateTask")
