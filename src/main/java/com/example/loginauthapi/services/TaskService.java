@@ -7,6 +7,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class TaskService {
@@ -17,5 +20,13 @@ public class TaskService {
     public Task createTask(Task task){
         task.setStatus(TaskStatus.ONGOING);
         return taskRepository.save(task);
+    }
+
+    public List<Task> getUserTasks(Long id){
+        return taskRepository.findByUserId(id);
+    }
+
+    public Optional<Task> getTakById(Long id){
+        return taskRepository.findById(id);
     }
 }
