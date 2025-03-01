@@ -48,6 +48,13 @@ public class TaskController {
         return ResponseEntity.ok(taskService.getUserTasks(id));
     }
 
+    @PutMapping("/updateTask")
+    public ResponseEntity<?> updateTask(@AuthenticationPrincipal User user){
+        if (user == null){
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("User not Authenticated");
+        }
+    }
+
 
 
 }
