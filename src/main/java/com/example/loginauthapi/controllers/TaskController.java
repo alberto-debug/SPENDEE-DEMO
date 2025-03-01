@@ -1,6 +1,5 @@
 package com.example.loginauthapi.controllers;
 
-
 import com.example.loginauthapi.domain.user.Task;
 import com.example.loginauthapi.domain.user.User;
 import com.example.loginauthapi.services.TaskService;
@@ -11,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,38 +22,61 @@ public class TaskController {
     private TaskService taskService;
 
     @PostMapping("/add")
-    public ResponseEntity<Task> createTasks(@RequestBody Task task){
+    public ResponseEntity<Task> createTasks(@RequestBody Task task, @AuthenticationPrincipal User user){
+        task.setUser(user);
         return ResponseEntity.ok(taskService.createTask(task));
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Task> getTaskById(@PathVariable Long id){
-        Optional<Task> task = taskService.getTakById(id);
-        return task.map(ResponseEntity::ok).orElseGet(()-> ResponseEntity.badRequest().build());
+    @GetMapping("/all")
+    public ResponseEntity<List<Task>> getAllTasks(){
+        return ResponseEntity.ok(taskService.getAllTasks());
     }
 
-    @GetMapping("/tasks")
-    public ResponseEntity<?> getUserTasks(@AuthenticationPrincipal User user) {
+    @GetMapping("/user")
+    public ResponseEntity<List<Task>> getUserTasks(@AuthenticationPrincipal User user) {
         if (user == null) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Usuário não autenticado.");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
         }
-
         return ResponseEntity.ok(taskService.getUserTasks(user.getId()));
     }
 
     @GetMapping("/user/{userId}")
-    public ResponseEntity<List<Task>> getUserTaskById(@PathVariable Long id){
-        return ResponseEntity.ok(taskService.getUserTasks(id));
+    public ResponseEntity<List<Task>> getUserTaskById(@PathVariable Long userId){
+        return ResponseEntity.ok(taskService.getUserTasks(userId));
     }
 
     @PutMapping("/updateTask")
-    public ResponseEntity<?> updateTask(@AuthenticationPrincipal User user , @RequestBody Task updatedTask){
-        if (user == null){
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("User not Authenticated");
+    public ResponseEntity<Task> updateTask(
+            @AuthenticationPrincipal User user,
+            @RequestBody Task updatedTask) {
+
+        if (user == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
         }
-        return ResponseEntity.ok(taskService.updateTask(user.getId()));
+
+        Optional<Task> taskOptional = taskService.getTaskByUserAndTitle(user.getId(), updatedTask.getTitle());
+
+        if (taskOptional.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+
+        Task updated = taskService.updateTask(taskOptional.get(), updatedTask);
+        return ResponseEntity.ok(updated);
     }
 
+    @DeleteMapping("/deleteTask")
+    public ResponseEntity<Void> deleteTask(@RequestBody Task task, @AuthenticationPrincipal User user) {
+        if (user == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
 
+        Optional<Task> taskOptional = taskService.getTaskByUserAndTitle(user.getId(), task.getTitle());
 
+        if (taskOptional.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+
+        taskService.deleteTask(taskOptional.get());
+        return ResponseEntity.noContent().build();
+    }
 }

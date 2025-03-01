@@ -22,25 +22,27 @@ public class TaskService {
         return taskRepository.save(task);
     }
 
+    public List<Task> getAllTasks(){
+        return taskRepository.findAll();
+    }
+
     public List<Task> getUserTasks(Long id){
         return taskRepository.findByUserId(id);
     }
 
-    public Optional<Task> getTakById(Long id){
-        return taskRepository.findById(id);
+    public Optional<Task> getTaskByUserAndTitle(Long userId, String title) {
+        return taskRepository.findByUserIdAndTitle(userId, title);
     }
 
-    public Task updateTask(Long id, Task updatedTask){
-        return taskRepository.findById(id).map(task -> {
-            task.setTitle(updatedTask.getTitle());
-            task.setDescription(updatedTask.getDescription());
-            task.setDueDate(updatedTask.getDueDate());
-            task.setStatus(updatedTask.getStatus());
-            return taskRepository.save(task);
-        }).orElseThrow(()-> new RuntimeException("Task Not Found"));
+    public Task updateTask(Task task, Task updatedTask) {
+        task.setTitle(updatedTask.getTitle());
+        task.setDescription(updatedTask.getDescription());
+        task.setDueDate(updatedTask.getDueDate());
+        task.setStatus(updatedTask.getStatus());
+        return taskRepository.save(task);
     }
 
-    public void deleteTask(Long id){
-        taskRepository.deleteById(id);
+    public void deleteTask(Task task) {
+        taskRepository.delete(task);
     }
 }
