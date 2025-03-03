@@ -1,6 +1,7 @@
 package com.example.loginauthapi.controllers;
 
 import com.example.loginauthapi.domain.user.Task;
+import com.example.loginauthapi.domain.user.TaskStatus;
 import com.example.loginauthapi.domain.user.User;
 import com.example.loginauthapi.services.TaskService;
 import lombok.RequiredArgsConstructor;
@@ -18,8 +19,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class TaskController {
 
-    @Autowired
-    private TaskService taskService;
+    private final TaskService taskService;
 
     @PostMapping("/add")
     public ResponseEntity<Task> createTasks(@RequestBody Task task, @AuthenticationPrincipal User user){
@@ -35,38 +35,21 @@ public class TaskController {
         return ResponseEntity.ok(taskService.getUserTasks(user.getId()));
     }
 
-    @PutMapping("/updateTask")
-    public ResponseEntity<Task> updateTask(
-            @AuthenticationPrincipal User user,
-            @RequestBody Task updatedTask) {
-
-        if (user == null) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
-        }
-
-        Optional<Task> taskOptional = taskService.getTaskByUserAndTitle(user.getId(), updatedTask.getTitle());
-
-        if (taskOptional.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        }
-
-        Task updated = taskService.updateTask(taskOptional.get(), updatedTask);
-        return ResponseEntity.ok(updated);
+    // Change the status of a task
+    @PatchMapping("/{taskId}/status")
+    public ResponseEntity<Task> changeTaskStatus(@PathVariable Long taskId, @RequestParam TaskStatus newStatus) {
+        Task updatedTask = taskService.changeTaskStatus(taskId, newStatus);
+        return ResponseEntity.ok(updatedTask);
     }
 
-    @DeleteMapping("/deleteTask")
-    public ResponseEntity<Void> deleteTask(@RequestBody Task task, @AuthenticationPrincipal User user) {
+    @DeleteMapping("/task/{id}")
+    public ResponseEntity<?> deleteTask(@PathVariable Long id, @AuthenticationPrincipal User user) {
         if (user == null) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Usuário não autenticado.");
         }
 
-        Optional<Task> taskOptional = taskService.getTaskByUserAndTitle(user.getId(), task.getTitle());
-
-        if (taskOptional.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
-
-        taskService.deleteTask(taskOptional.get());
-        return ResponseEntity.noContent().build();
+        taskService.deletetask(id, user.getEmail());
+        return ResponseEntity.ok().body("Transação removida com sucesso.");
     }
+
 }

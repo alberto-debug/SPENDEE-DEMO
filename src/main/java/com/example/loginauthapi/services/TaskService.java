@@ -22,27 +22,26 @@ public class TaskService {
         return taskRepository.save(task);
     }
 
-    public List<Task> getAllTasks(){
-        return taskRepository.findAll();
-    }
 
     public List<Task> getUserTasks(Long id){
         return taskRepository.findByUserId(id);
     }
 
-    public Optional<Task> getTaskByUserAndTitle(Long userId, String title) {
-        return taskRepository.findByUserIdAndTitle(userId, title);
-    }
-
-    public Task updateTask(Task task, Task updatedTask) {
-        task.setTitle(updatedTask.getTitle());
-        task.setDescription(updatedTask.getDescription());
-        task.setDueDate(updatedTask.getDueDate());
-        task.setStatus(updatedTask.getStatus());
+    public Task changeTaskStatus(Long taskId, TaskStatus newStatus) {
+        Task task = taskRepository.findById(taskId)
+                .orElseThrow(() -> new RuntimeException("Task not found with id: " + taskId));
+        task.setStatus(newStatus);
         return taskRepository.save(task);
     }
 
-    public void deleteTask(Task task) {
+    public void deletetask(Long id, String userEmail) {
+        Task task = taskRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Transação não encontrada"));
+
+        if (!task.getUser().getEmail().equals(userEmail)) {
+            throw new RuntimeException("Ação não autorizada");
+        }
+
         taskRepository.delete(task);
     }
 }

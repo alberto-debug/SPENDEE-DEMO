@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="87675954-5604-402e-b0a7-90ce99da4c39" name="Changes" comment="updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/loginauthapi/repositories/TaskRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/loginauthapi/repositories/TaskRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loginauthapi/controllers/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loginauthapi/controllers/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loginauthapi/infra/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loginauthapi/infra/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loginauthapi/services/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loginauthapi/services/TaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/loginauthapi/infra/security/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/loginauthapi/infra/security/SecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/loginauthapi/services/TaskService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/loginauthapi/services/TaskService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,12 +36,12 @@
     &quot;assignee&quot;: &quot;Dev-Albertojunior1&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:alberto-debug/SPENDEE-DEMO.git",
-    "accountId": "a68310ab-85c3-4371-8faf-11970f678b19"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:alberto-debug/SPENDEE-DEMO.git&quot;,
+    &quot;accountId&quot;: &quot;a68310ab-85c3-4371-8faf-11970f678b19&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -63,7 +66,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/alberto/Desktop/Projects/demo-spendee/login-app-backend-main",
+    "last_opened_file_path": "/home/alberto/Desktop/Projects/SPENDEE/login-app-backend-main",
     "project.structure.last.edited": "Global Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
@@ -107,14 +110,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720803460079</updated>
-    </task>
-    <task id="LOCAL-00072" summary="changes">
-      <option name="closed" value="true" />
-      <created>1739886563410</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1739886563410</updated>
     </task>
     <task id="LOCAL-00073" summary="changes">
       <option name="closed" value="true" />
@@ -500,7 +495,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740852780555</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="updates">
+      <option name="closed" value="true" />
+      <created>1740855607346</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1740855607346</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="UnknownFeatures">
