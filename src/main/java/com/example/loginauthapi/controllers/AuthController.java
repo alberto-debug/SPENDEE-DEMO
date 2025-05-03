@@ -74,7 +74,7 @@ public class AuthController {
 
 
             //fetch role from database
-            Role userRole = roleRepository.findByName("User_Role")
+            Role userRole = roleRepository.findByName("ROLE_USER")
                     .orElseThrow(()-> new RuntimeException("Default Role Not Found"));
 
             // Create a new user and save to the database
