@@ -1,10 +1,12 @@
 package com.example.loginauthapi.controllers;
 
+import com.example.loginauthapi.domain.role.Role;
 import com.example.loginauthapi.domain.user.User;
 import com.example.loginauthapi.dto.LoginRequestDTO;
 import com.example.loginauthapi.dto.RegisterRequestDTO;
 import com.example.loginauthapi.dto.ResponseDTO;
 import com.example.loginauthapi.infra.security.TokenService;
+import com.example.loginauthapi.repositories.RoleRepository;
 import com.example.loginauthapi.repositories.UserRepository;
 import com.example.loginauthapi.validation.ValidationException;
 import com.example.loginauthapi.validation.ValidationService;
@@ -23,6 +25,9 @@ public class AuthController {
 
     @Autowired
     private final UserRepository repository;
+
+    private final RoleRepository roleRepository;
+
 
     // @Autowired
     // private RoleRepository roleRepository;
@@ -67,11 +72,17 @@ public class AuthController {
                 return ResponseEntity.status(409).body("User already exists with this email");
             }
 
+
+            //fetch role from database
+            Role userRole = roleRepository.findByName("User_Role")
+                    .orElseThrow(()-> new RuntimeException("Default Role Not Found"));
+
             // Create a new user and save to the database
             User newUser = new User();
             newUser.setName(body.name());
             newUser.setEmail(body.email());
             newUser.setPassword(passwordEncoder.encode(body.password()));
+            newUser.getRoles().add(userRole);
 
             repository.save(newUser);
 
