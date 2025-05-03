@@ -23,9 +23,9 @@ public class AuthController {
 
     @Autowired
     private final UserRepository repository;
-    
-//    @Autowired
-//    private RoleRepository roleRepository;
+
+    // @Autowired
+    // private RoleRepository roleRepository;
 
     @Autowired
     private final PasswordEncoder passwordEncoder;
@@ -37,14 +37,14 @@ public class AuthController {
     final ValidationService validationService;
 
     @GetMapping("/")
-    public String Home(){
+    public String Home() {
         return ("Welcome home");
     }
 
     @PostMapping("/login")
-    public ResponseEntity login(@RequestBody LoginRequestDTO body){
+    public ResponseEntity login(@RequestBody LoginRequestDTO body) {
         User user = this.repository.findByEmail(body.email()).orElseThrow(() -> new RuntimeException("User not found"));
-        if(passwordEncoder.matches(body.password(), user.getPassword())) {
+        if (passwordEncoder.matches(body.password(), user.getPassword())) {
             String token = this.tokenService.generateToken(user);
             String userLogged = "User Logged Successfully";
             System.out.println(userLogged + " Name: " + user.getName());
@@ -79,7 +79,7 @@ public class AuthController {
             String token = tokenService.generateToken(newUser);
 
             String successMessage = "User Registered Successfully";
-            System.out.println(successMessage + " Name: " + newUser.getName() );
+            System.out.println(successMessage + " Name: " + newUser.getName());
             return ResponseEntity.ok(new ResponseDTO(successMessage, token));
         } catch (ValidationException e) {
             // Handle validation errors
