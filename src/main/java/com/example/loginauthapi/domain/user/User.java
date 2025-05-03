@@ -1,9 +1,13 @@
 package com.example.loginauthapi.domain.user;
 
+import com.example.loginauthapi.domain.role.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -29,10 +33,7 @@ public class User {
     @JoinTable(name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
-
-
-
-
+    private Set<Role> roles = new HashSet<>();
 
 
     public Long getId() {
