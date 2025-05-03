@@ -30,6 +30,7 @@ public class User {
     private String password;
 
 
+    //link table telling which user have which role
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
