@@ -28,7 +28,6 @@ public class AuthController {
 
     private final RoleRepository roleRepository;
 
-
     // @Autowired
     // private RoleRepository roleRepository;
 
@@ -72,18 +71,17 @@ public class AuthController {
                 return ResponseEntity.status(409).body("User already exists with this email");
             }
 
-
-            //fetch role from database
+            // fetch role from database
             Role userRole = roleRepository.findByName("ROLE_USER")
-                    .orElseThrow(()-> new RuntimeException("Default Role Not Found"));
+                    .orElseThrow(() -> new RuntimeException("Default Role Not Found"));
 
-            // Create a new user and save to the database
+            // Create a new user and save to the database, and add te user role to new
+            // users.
             User newUser = new User();
             newUser.setName(body.name());
             newUser.setEmail(body.email());
             newUser.setPassword(passwordEncoder.encode(body.password()));
             newUser.getRoles().add(userRole);
-
             repository.save(newUser);
 
             // Generate and return the token
