@@ -70,7 +70,6 @@ public class SecurityConfig {
         return authProvider;
     }
 
-
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
