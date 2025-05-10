@@ -46,7 +46,5 @@ public class AdminSeeder implements CommandLineRunner {
             System.out.println("✅ Admin user created");
 
         }
-
     }
-
 }
