@@ -2,6 +2,7 @@ package com.example.loginauthapi.controllers;
 
 import com.example.loginauthapi.domain.user.User;
 import com.example.loginauthapi.dto.LoginRequestDTO;
+import com.example.loginauthapi.infra.security.TokenService;
 import com.example.loginauthapi.repositories.RoleRepository;
 import com.example.loginauthapi.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,9 @@ public class AdminAuthController {
     private RoleRepository roleRepository;
 
     @Autowired
+    private TokenService tokenService;
+
+    @Autowired
     private PasswordEncoder passwordEncoder;
 
     @GetMapping("/login")
@@ -41,7 +45,7 @@ public class AdminAuthController {
             return ResponseEntity.status(403).body("Access Denied");
         }
 
-        
+        String Token = this.tokenService.generateToken(user);
 
 
         return null;
