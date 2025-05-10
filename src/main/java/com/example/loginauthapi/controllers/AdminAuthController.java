@@ -34,6 +34,9 @@ public class AdminAuthController {
         if (!passwordEncoder.matches(body.password(), user.getPassword()))
             return ResponseEntity.badRequest().body("Invalid Credentials");
 
+        boolean isAdmin = user.getRoles().stream()
+                .anyMatch(role -> role.getName().equals("ROLE_ADMIN"));
+
 
         return null;
     }
