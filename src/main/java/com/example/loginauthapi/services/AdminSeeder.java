@@ -21,7 +21,6 @@ public class AdminSeeder implements CommandLineRunner {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-
     @Override
     public void run(String... args) throws Exception {
 
