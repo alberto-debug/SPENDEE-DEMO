@@ -31,7 +31,10 @@ public class AdminAuthController {
         User user = this.userRepository.findByEmail(body.email())
                 .orElseThrow(()-> new RuntimeException("User not found"));
 
-        
+        if (!passwordEncoder.matches(body.password(), user.getPassword()))
+            return ResponseEntity.badRequest().body("Invalid Credentials");
+
+
         return null;
     }
 }
