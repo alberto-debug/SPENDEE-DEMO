@@ -37,6 +37,12 @@ public class AdminAuthController {
         boolean isAdmin = user.getRoles().stream()
                 .anyMatch(role -> role.getName().equals("ROLE_ADMIN"));
 
+        if (!isAdmin){
+            return ResponseEntity.status(403).body("Access Denied");
+        }
+
+        
+
 
         return null;
     }
