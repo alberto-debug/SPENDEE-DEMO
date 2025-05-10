@@ -28,9 +28,6 @@ public class AuthController {
 
     private final RoleRepository roleRepository;
 
-    // @Autowired
-    // private RoleRepository roleRepository;
-
     @Autowired
     private final PasswordEncoder passwordEncoder;
 
