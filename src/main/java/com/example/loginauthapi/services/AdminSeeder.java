@@ -4,7 +4,6 @@ import com.example.loginauthapi.domain.role.Role;
 import com.example.loginauthapi.domain.user.User;
 import com.example.loginauthapi.repositories.RoleRepository;
 import com.example.loginauthapi.repositories.UserRepository;
-import org.hibernate.annotations.AnyDiscriminatorValue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -31,7 +30,7 @@ public class AdminSeeder implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        
+
         if (userRepository.findByEmail(adminEmail).isEmpty()){
             Role adminRole = roleRepository.findByName("ROLE_ADMIN")
                     .orElseThrow(()-> new RuntimeException("Role Admin not found"));
