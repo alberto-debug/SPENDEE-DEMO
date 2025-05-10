@@ -1,5 +1,6 @@
 package com.example.loginauthapi.controllers;
 
+import com.example.loginauthapi.domain.user.User;
 import com.example.loginauthapi.dto.LoginRequestDTO;
 import com.example.loginauthapi.repositories.RoleRepository;
 import com.example.loginauthapi.repositories.UserRepository;
@@ -27,7 +28,10 @@ public class AdminAuthController {
 
     @GetMapping("/login")
     public ResponseEntity<?> adminLogin(@RequestBody LoginRequestDTO body){
+        User user = this.userRepository.findByEmail(body.email())
+                .orElseThrow(()-> new RuntimeException("User not found"));
 
+        
         return null;
     }
 }
