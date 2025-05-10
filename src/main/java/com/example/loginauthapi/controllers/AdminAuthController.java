@@ -2,6 +2,7 @@ package com.example.loginauthapi.controllers;
 
 import com.example.loginauthapi.domain.user.User;
 import com.example.loginauthapi.dto.LoginRequestDTO;
+import com.example.loginauthapi.dto.ResponseDTO;
 import com.example.loginauthapi.infra.security.TokenService;
 import com.example.loginauthapi.repositories.RoleRepository;
 import com.example.loginauthapi.repositories.UserRepository;
@@ -45,9 +46,11 @@ public class AdminAuthController {
             return ResponseEntity.status(403).body("Access Denied");
         }
 
-        String Token = this.tokenService.generateToken(user);
+        String token = this.tokenService.generateToken(user);
+        String userLogged = "Admin logged successfully";
+        System.out.println(userLogged + "name:" + user.getName());
 
-
-        return null;
+        
+        return ResponseEntity.ok(new ResponseDTO(userLogged,token));
     }
 }
