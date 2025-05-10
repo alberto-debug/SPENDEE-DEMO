@@ -49,7 +49,7 @@ public class AdminAuthController {
         String token = this.tokenService.generateToken(user);
         String userLogged = "Admin logged successfully";
         System.out.println(userLogged + "name:" + user.getName());
-        
+
         return ResponseEntity.ok(new ResponseDTO(userLogged,token));
     }
 }
