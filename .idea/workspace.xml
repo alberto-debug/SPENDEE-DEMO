@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87675954-5604-402e-b0a7-90ce99da4c39" name="Changes" comment="updates">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loginauthapi/controllers/AdminAuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loginauthapi/controllers/AdminAuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loginauthapi/infra/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loginauthapi/infra/security/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +87,16 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -110,54 +122,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720803460079</updated>
-    </task>
-    <task id="LOCAL-00120" summary="updates">
-      <option name="closed" value="true" />
-      <created>1740852780555</created>
-      <option name="number" value="00120" />
-      <option name="presentableId" value="LOCAL-00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1740852780555</updated>
-    </task>
-    <task id="LOCAL-00121" summary="updates">
-      <option name="closed" value="true" />
-      <created>1740855607346</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1740855607346</updated>
-    </task>
-    <task id="LOCAL-00122" summary="updates">
-      <option name="closed" value="true" />
-      <created>1740995158139</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1740995158140</updated>
-    </task>
-    <task id="LOCAL-00123" summary="updates">
-      <option name="closed" value="true" />
-      <created>1743006848283</created>
-      <option name="number" value="00123" />
-      <option name="presentableId" value="LOCAL-00123" />
-      <option name="project" value="LOCAL" />
-      <updated>1743006848284</updated>
-    </task>
-    <task id="LOCAL-00124" summary="updates">
-      <option name="closed" value="true" />
-      <created>1746822395977</created>
-      <option name="number" value="00124" />
-      <option name="presentableId" value="LOCAL-00124" />
-      <option name="project" value="LOCAL" />
-      <updated>1746822395978</updated>
-    </task>
-    <task id="LOCAL-00125" summary="updates">
-      <option name="closed" value="true" />
-      <created>1746822427549</created>
-      <option name="number" value="00125" />
-      <option name="presentableId" value="LOCAL-00125" />
-      <option name="project" value="LOCAL" />
-      <updated>1746822427549</updated>
     </task>
     <task id="LOCAL-00126" summary="updates">
       <option name="closed" value="true" />
@@ -503,7 +467,55 @@
       <option name="project" value="LOCAL" />
       <updated>1746919656601</updated>
     </task>
-    <option name="localTasksCounter" value="169" />
+    <task id="LOCAL-00169" summary="updates">
+      <option name="closed" value="true" />
+      <created>1746919830422</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1746919830422</updated>
+    </task>
+    <task id="LOCAL-00170" summary="updates">
+      <option name="closed" value="true" />
+      <created>1746919833370</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1746919833370</updated>
+    </task>
+    <task id="LOCAL-00171" summary="updates">
+      <option name="closed" value="true" />
+      <created>1746919837156</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1746919837156</updated>
+    </task>
+    <task id="LOCAL-00172" summary="updates">
+      <option name="closed" value="true" />
+      <created>1746919846492</created>
+      <option name="number" value="00172" />
+      <option name="presentableId" value="LOCAL-00172" />
+      <option name="project" value="LOCAL" />
+      <updated>1746919846492</updated>
+    </task>
+    <task id="LOCAL-00173" summary="updates">
+      <option name="closed" value="true" />
+      <created>1746919979254</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
+      <option name="project" value="LOCAL" />
+      <updated>1746919979254</updated>
+    </task>
+    <task id="LOCAL-00174" summary="updates">
+      <option name="closed" value="true" />
+      <created>1746919981998</created>
+      <option name="number" value="00174" />
+      <option name="presentableId" value="LOCAL-00174" />
+      <option name="project" value="LOCAL" />
+      <updated>1746919981998</updated>
+    </task>
+    <option name="localTasksCounter" value="175" />
     <servers />
   </component>
   <component name="UnknownFeatures">

@@ -10,10 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/admin")
@@ -31,7 +28,7 @@ public class AdminAuthController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @GetMapping("/login")
+    @PostMapping("/login")
     public ResponseEntity<?> adminLogin(@RequestBody LoginRequestDTO body){
         User user = this.userRepository.findByEmail(body.email())
                 .orElseThrow(()-> new RuntimeException("User not found"));
@@ -48,7 +45,7 @@ public class AdminAuthController {
 
         String token = this.tokenService.generateToken(user);
         String userLogged = "Admin logged successfully";
-        System.out.println(userLogged + "name:" + user.getName());
+        System.out.println(userLogged + " name: " + user.getName());
 
         return ResponseEntity.ok(new ResponseDTO(userLogged,token));
     }
