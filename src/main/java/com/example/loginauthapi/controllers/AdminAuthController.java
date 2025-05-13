@@ -27,7 +27,6 @@ public class AdminAuthController {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
-
     
     @PostMapping("/login")
     public ResponseEntity<?> adminLogin(@RequestBody LoginRequestDTO body){
