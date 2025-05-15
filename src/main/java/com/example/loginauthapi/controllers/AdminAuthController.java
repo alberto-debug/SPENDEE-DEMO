@@ -24,7 +24,6 @@ public class AdminAuthController {
     
     @Autowired
     private TokenService tokenService;
-
     
     @Autowired
     private PasswordEncoder passwordEncoder;
