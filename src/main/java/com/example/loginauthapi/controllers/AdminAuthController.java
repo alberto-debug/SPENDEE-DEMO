@@ -21,10 +21,11 @@ public class AdminAuthController {
 
     @Autowired
     private RoleRepository roleRepository;
+
     
     @Autowired
     private TokenService tokenService;
-    
+
     @Autowired
     private PasswordEncoder passwordEncoder;
 
