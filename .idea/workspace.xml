@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87675954-5604-402e-b0a7-90ce99da4c39" name="Changes" comment="updates" />
+    <list default="true" id="87675954-5604-402e-b0a7-90ce99da4c39" name="Changes" comment="updates">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/loginauthapi/controllers/AdminAuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/loginauthapi/controllers/AdminAuthController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -118,62 +121,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720803460079</updated>
-    </task>
-    <task id="LOCAL-00139" summary="updates">
-      <option name="closed" value="true" />
-      <created>1746904270777</created>
-      <option name="number" value="00139" />
-      <option name="presentableId" value="LOCAL-00139" />
-      <option name="project" value="LOCAL" />
-      <updated>1746904270777</updated>
-    </task>
-    <task id="LOCAL-00140" summary="updates">
-      <option name="closed" value="true" />
-      <created>1746904316918</created>
-      <option name="number" value="00140" />
-      <option name="presentableId" value="LOCAL-00140" />
-      <option name="project" value="LOCAL" />
-      <updated>1746904316918</updated>
-    </task>
-    <task id="LOCAL-00141" summary="updates">
-      <option name="closed" value="true" />
-      <created>1746904319938</created>
-      <option name="number" value="00141" />
-      <option name="presentableId" value="LOCAL-00141" />
-      <option name="project" value="LOCAL" />
-      <updated>1746904319938</updated>
-    </task>
-    <task id="LOCAL-00142" summary="updates">
-      <option name="closed" value="true" />
-      <created>1746907905530</created>
-      <option name="number" value="00142" />
-      <option name="presentableId" value="LOCAL-00142" />
-      <option name="project" value="LOCAL" />
-      <updated>1746907905530</updated>
-    </task>
-    <task id="LOCAL-00143" summary="updates">
-      <option name="closed" value="true" />
-      <created>1746907908639</created>
-      <option name="number" value="00143" />
-      <option name="presentableId" value="LOCAL-00143" />
-      <option name="project" value="LOCAL" />
-      <updated>1746907908639</updated>
-    </task>
-    <task id="LOCAL-00144" summary="updates">
-      <option name="closed" value="true" />
-      <created>1746907911543</created>
-      <option name="number" value="00144" />
-      <option name="presentableId" value="LOCAL-00144" />
-      <option name="project" value="LOCAL" />
-      <updated>1746907911543</updated>
-    </task>
-    <task id="LOCAL-00145" summary="updates">
-      <option name="closed" value="true" />
-      <created>1746907916405</created>
-      <option name="number" value="00145" />
-      <option name="presentableId" value="LOCAL-00145" />
-      <option name="project" value="LOCAL" />
-      <updated>1746907916405</updated>
     </task>
     <task id="LOCAL-00146" summary="updates">
       <option name="closed" value="true" />
@@ -511,7 +458,63 @@
       <option name="project" value="LOCAL" />
       <updated>1747151991740</updated>
     </task>
-    <option name="localTasksCounter" value="188" />
+    <task id="LOCAL-00188" summary="updates">
+      <option name="closed" value="true" />
+      <created>1747339384051</created>
+      <option name="number" value="00188" />
+      <option name="presentableId" value="LOCAL-00188" />
+      <option name="project" value="LOCAL" />
+      <updated>1747339384052</updated>
+    </task>
+    <task id="LOCAL-00189" summary="updates">
+      <option name="closed" value="true" />
+      <created>1747339386686</created>
+      <option name="number" value="00189" />
+      <option name="presentableId" value="LOCAL-00189" />
+      <option name="project" value="LOCAL" />
+      <updated>1747339386686</updated>
+    </task>
+    <task id="LOCAL-00190" summary="updates">
+      <option name="closed" value="true" />
+      <created>1747339392005</created>
+      <option name="number" value="00190" />
+      <option name="presentableId" value="LOCAL-00190" />
+      <option name="project" value="LOCAL" />
+      <updated>1747339392005</updated>
+    </task>
+    <task id="LOCAL-00191" summary="updates">
+      <option name="closed" value="true" />
+      <created>1747339397281</created>
+      <option name="number" value="00191" />
+      <option name="presentableId" value="LOCAL-00191" />
+      <option name="project" value="LOCAL" />
+      <updated>1747339397282</updated>
+    </task>
+    <task id="LOCAL-00192" summary="updates">
+      <option name="closed" value="true" />
+      <created>1747339402751</created>
+      <option name="number" value="00192" />
+      <option name="presentableId" value="LOCAL-00192" />
+      <option name="project" value="LOCAL" />
+      <updated>1747339402751</updated>
+    </task>
+    <task id="LOCAL-00193" summary="updates">
+      <option name="closed" value="true" />
+      <created>1747339407640</created>
+      <option name="number" value="00193" />
+      <option name="presentableId" value="LOCAL-00193" />
+      <option name="project" value="LOCAL" />
+      <updated>1747339407640</updated>
+    </task>
+    <task id="LOCAL-00194" summary="updates">
+      <option name="closed" value="true" />
+      <created>1747339412361</created>
+      <option name="number" value="00194" />
+      <option name="presentableId" value="LOCAL-00194" />
+      <option name="project" value="LOCAL" />
+      <updated>1747339412361</updated>
+    </task>
+    <option name="localTasksCounter" value="195" />
     <servers />
   </component>
   <component name="UnknownFeatures">
