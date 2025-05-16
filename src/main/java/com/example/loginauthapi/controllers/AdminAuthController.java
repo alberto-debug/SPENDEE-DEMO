@@ -16,12 +16,13 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/admin")
 public class AdminAuthController {
 
+
     @Autowired
     private UserRepository userRepository;
 
     @Autowired
     private RoleRepository roleRepository;
-    
+
     @Autowired
     private TokenService tokenService;
 
