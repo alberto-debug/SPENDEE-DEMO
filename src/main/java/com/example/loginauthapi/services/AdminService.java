@@ -3,12 +3,14 @@ package com.example.loginauthapi.services;
 import com.example.loginauthapi.domain.user.Task;
 import com.example.loginauthapi.domain.user.Transaction;
 import com.example.loginauthapi.domain.user.User;
+import com.example.loginauthapi.dto.UserSummary;
 import com.example.loginauthapi.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class AdminService {
@@ -23,8 +25,9 @@ public class AdminService {
     private TaskService taskService;
 
 
-    public List<User> getAllUsers(User user){
-        return  userRepository.findAll();
+    public List<UserSummary> getAllUsers(){
+        return  userRepository.findAll().stream().map(user -> new UserSummary(user.getId() , user.getName(), user.getEmail()))
+                .collect(Collectors.toList());
     }
 
     private List<Transaction> getUserTransactions(String userEmail){
