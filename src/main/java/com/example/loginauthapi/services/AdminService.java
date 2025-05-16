@@ -31,6 +31,11 @@ public class AdminService {
         return transactionService.getUserTransaction(userEmail);
     }
 
+    private List<Task> getUserTasks(String userEmail){
+        User user = userRepository.findByEmail(userEmail)
+                .orElseThrow(()-> new RuntimeException("user not found: " + userEmail));
 
+        return taskService.getUserTasks(user.getId());
+    }
 
 }
