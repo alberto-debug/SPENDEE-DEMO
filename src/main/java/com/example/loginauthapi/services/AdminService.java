@@ -6,11 +6,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AdminService {
 
     @Autowired
-    private
+    private UserRepository userRepository;
+
+
+    public List<User> getAllUsers(User user){
+        return  userRepository.findAll();
+    }
 
 }
