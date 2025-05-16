@@ -1,5 +1,7 @@
 package com.example.loginauthapi.services;
 
+import com.example.loginauthapi.domain.user.Task;
+import com.example.loginauthapi.domain.user.Transaction;
 import com.example.loginauthapi.domain.user.User;
 import com.example.loginauthapi.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,10 @@ public class AdminService {
         return  userRepository.findAll();
     }
 
-    public get
+    private List<Transaction> getUserTransactions(String userEmail){
+        return transactionService.getUserTransaction(userEmail);
+    }
+
+
 
 }
