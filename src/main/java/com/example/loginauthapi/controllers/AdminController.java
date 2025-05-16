@@ -1,6 +1,7 @@
 package com.example.loginauthapi.controllers;
 
 
+import com.example.loginauthapi.domain.user.Task;
 import com.example.loginauthapi.domain.user.Transaction;
 import com.example.loginauthapi.domain.user.User;
 import com.example.loginauthapi.dto.UserSummary;
@@ -24,6 +25,12 @@ public class AdminController {
 
     @GetMapping("/users/{email}/transactions")
     public List<Transaction> getUserTransactions(@PathVariable String email){
-        return  adminService.getUserTransactions()
+        return  adminService.getUserTransactions(email);
     }
+
+    @GetMapping("/users/{email}/tasks")
+    public List<Task> getUserTasks(@PathVariable String email){
+        return adminService.getUserTasks(email);
+    }
+
 }
