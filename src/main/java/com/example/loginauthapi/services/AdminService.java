@@ -14,9 +14,14 @@ public class AdminService {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private TransactionService transactionService;
+
 
     public List<User> getAllUsers(User user){
         return  userRepository.findAll();
     }
+
+    public get
 
 }
