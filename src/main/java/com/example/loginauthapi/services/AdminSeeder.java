@@ -28,7 +28,6 @@ public class AdminSeeder implements CommandLineRunner {
     @Value("${admPassword}")
     private String adminPassword;
 
-
     
     @Override
     public void run(String... args) throws Exception {
